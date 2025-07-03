@@ -1,178 +1,168 @@
 # Algeria Orientation Committee Platform
 
-A full-stack React application for managing student projects, incubation, and orientation within the Algerian educational system.
+A web application for managing student projects, facilitating collaboration between students, incubators, and technical centers.
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Features](#features)
+- [Screenshots](#screenshots)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Project Structure](#project-structure)
+- [Contributing](#contributing)
+- [License](#license)
 
 ## Overview
 
-This platform provides a comprehensive system for students, incubators, Community Development Engineers (CDE), CATI (Center for Technology and Innovation), and administrators to manage project proposals, reviews, and the incubation process.
+The Algeria Orientation Committee Platform is designed to streamline the process of student project submissions, reviews, and collaborations with various technical centers and incubators. It provides role-specific dashboards for students, incubator managers, CDE (Center for Digital Excellence) managers, CATI (Center for Advanced Technology and Innovation) managers, and administrators.
 
 ## Features
 
-- 🔒 Role-based authentication (Student, Incubator, CDE, CATI, Admin)
-- 📝 Student project submission and management
-- 👥 Team member management 
-- 📊 Project evaluation and routing
-- 📋 Project status tracking and workflow
-- 📤 Data export capabilities
-- 🔄 Real-time dashboard updates
+- **User Authentication**: Role-based access control with five distinct roles
+- **Project Management**: Create, view, update, and submit projects
+- **Team Management**: Add and manage team members for projects
+- **Project Review Workflow**: Submit projects for review and track their status
+- **Training Program Management**: Upload training programs and set dates
+- **Export Functionality**: Export project data to Excel format
+- **Role Switching**: Easily switch between different roles for testing and demonstration
+
+## Screenshots
+
+### Sign In Page
+![Sign In Page](screenshots/signin.png)
+*The sign-in page allows users to authenticate with their credentials and includes quick access buttons for demonstration purposes.*
+
+### Account Setup
+![Account Type Selection](screenshots/Account_type.png)
+*Users can select their account type during the registration process.*
+
+![Account Information](screenshots/account_info.png)
+*Form for entering basic account information during registration.*
+
+![Personal Information](screenshots/personal_info.png)
+*Users can provide their personal information for a complete profile.*
+
+![Academic Information](screenshots/acadimic.png)
+*Students can enter their academic details including field of study and specialization.*
+
+### Home Page
+![Home Page](screenshots/Screenshot\ from\ 2025-07-03\ 22-46-29.png)
+*The home page provides quick access to all dashboards and includes a dropdown menu for navigating to any route in the application.*
+
+### Student Dashboard
+![Student Dashboard](screenshots/Studen_dash.png)
+*Students can create and manage projects, add team members, and submit projects for review. The dashboard provides a comprehensive overview of project status.*
+
+### Incubator Dashboard
+![Incubator Dashboard](screenshots/Incubateur_dash.png)
+*Incubator managers can view projects directed to them, export project data, and upload training programs. They can also provide feedback on student projects.*
+
+### Admin Dashboard
+![Admin Dashboard](screenshots/Admin_dash.png)
+*Administrators have an overview of all projects and can update project statuses and direct them to appropriate interfaces. The admin dashboard provides tools for managing the entire platform.*
+
+## Technologies Used
+
+- **Frontend**:
+  - React
+  - TypeScript
+  - Tailwind CSS
+  - React Router
+  - Zustand (State Management)
+  - React Icons
+
+- **Development Tools**:
+  - Vite
+  - ESLint
+  - TypeScript
+
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/algeria-orientation-platform.git
+   cd algeria-orientation-platform
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+4. Open your browser and navigate to `http://localhost:3000`
+
+## Usage
+
+### Authentication
+
+For demonstration purposes, the application uses mock authentication:
+
+- **Student**: Use email containing "student"
+- **Incubator**: Use email containing "incubator"
+- **CDE**: Use email containing "cde"
+- **CATI**: Use email containing "cati"
+- **Admin**: Use email containing "admin"
+
+Any password will work with the mock authentication system.
+
+### Role Switching
+
+You can switch between different roles using:
+
+1. The role switcher component available on all dashboard pages
+2. The quick access buttons on the home page
+3. The sign-in page with role-specific quick access buttons
+
+### Project Workflow
+
+1. **Students**: Create projects, add team members, and submit for review
+2. **Admin**: Review submitted projects and direct them to appropriate interfaces (CDE, CATI, or Incubator)
+3. **Interface Managers**: Review directed projects and provide feedback
 
 ## Project Structure
 
-### Core Technologies
-
-- **Frontend**: React 19 with React Router 7
-- **State Management**: Zustand for lightweight, action-based state
-- **Styling**: TailwindCSS 4.0
-- **UI Components**: Custom components with responsive design
-- **Icons**: React Icons
-- **Authentication**: Token-based auth with local storage persistence
-
-### Directory Structure
-
 ```
-project-root/
-├── app/                        # Main application code
-│   ├── components/             # Reusable UI components
-│   ├── MultiStepForm/          # Forms with multiple steps
-│   ├── routes/                 # Application routes
-│   │   ├── auth/               # Authentication routes
-│   │   │   ├── signin.tsx      # Sign in page
-│   │   │   └── signup.tsx      # Sign up page
-│   │   ├── home.tsx            # Home page with auth redirection
-│   │   ├── cdedashboard.tsx    # CDE dashboard
-│   │   ├── catidashboard.tsx   # CATI dashboard
-│   │   ├── incubateurdashboard.tsx # Incubator dashboard
-│   │   ├── studentdashboard.tsx # Student dashboard
-│   │   └── admindashboard.tsx  # Admin dashboard
-│   ├── services/               # API integration services
-│   │   └── projectService.ts   # Project-related API functions
-│   ├── store/                  # State management
-│   │   ├── hooks/              # Custom React hooks
-│   │   │   └── useAuth.ts      # Authentication hook
-│   │   └── slices/             # State slices
-│   │       └── auth.ts         # Authentication state
-│   ├── types/                  # TypeScript type definitions
-│   │   └── project.ts          # Project-related types
-│   ├── utils/                  # Utility functions
-│   ├── app.css                 # Global styles
-│   ├── root.tsx                # Application root component
-│   └── routes.ts               # Route definitions
-├── public/                     # Static assets
-├── vite.config.ts              # Vite configuration
-├── tsconfig.json               # TypeScript configuration
-└── package.json                # Dependencies and scripts
-```
-
-## Role-Based Workflow
-
-### Student
-- Sign up with personal and academic details
-- Create and manage project proposals
-- Add team members to projects
-- Submit projects for review
-- Track project status
-
-### Incubator
-- Review projects directed to incubation
-- Provide feedback on student projects
-- Track incubation progress
-- Export project data
-
-### CDE (Community Development Engineer)
-- Review projects directed to CDE
-- Upload training programs
-- Track project development
-- Export project data
-
-### CATI (Center for Technology and Innovation)
-- Review projects directed to CATI
-- Provide technical evaluation
-- Track innovation projects
-- Export project data
-
-### Admin
-- Manage all users and projects
-- System configuration
-- View statistics
-- Full access to all platform features
-
-## Authentication and Authorization
-
-The platform implements a token-based authentication system:
-
-1. User signs in with email and password
-2. Backend validates credentials and returns a token
-3. Token is stored in local storage for session persistence
-4. Protected routes verify token and user role
-5. Redirects to appropriate dashboard based on user role
-
-## Project Workflow
-
-1. **Draft**: Student creates project and team
-2. **Submitted**: Project is submitted for review
-3. **Under Review**: Initial evaluation by admin
-4. **Directed**: Project is sent to appropriate entity (CATI, CDE, or Incubator)
-5. **Processing**: Entity is working on the project
-6. **Rejected**: Project rejected with feedback
-
-## API Integration
-
-The application communicates with a backend API located at `http://192.168.92.224:9000` with endpoints for:
-
-- User authentication
-- Project management
-- Team member management
-- File uploads
-- Data export
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js 16+ 
-- npm or yarn
-
-### Installation
-
-1. Clone the repository:
-```bash
-git clone <repository-url>
-cd <repository-directory>
-```
-
-2. Install dependencies:
-```bash
-npm install
-```
-
-3. Start the development server:
-```bash
-npm run dev
-```
-
-4. The application will be available at `http://localhost:5173`
-
-### Building for Production
-
-```bash
-npm run build
-```
-
-## Docker Deployment
-
-```bash
-docker build -t orientation-platform .
-docker run -p 3000:3000 orientation-platform
+algeria-orientation-platform/
+├── app/
+│   ├── components/       # Reusable UI components
+│   ├── routes/           # Application routes and pages
+│   ├── services/         # API services
+│   ├── store/            # State management
+│   │   ├── hooks/        # Custom hooks
+│   │   └── slices/       # Store slices
+│   ├── types/            # TypeScript type definitions
+│   └── utils/            # Utility functions
+├── public/               # Static assets
+└── screenshots/          # Application screenshots
 ```
 
 ## Contributing
 
 1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/your-feature`
-3. Commit changes: `git commit -m 'Add your feature'`
-4. Push to branch: `git push origin feature/your-feature`
-5. Submit a Pull Request
+2. Create your feature branch: `git checkout -b feature/amazing-feature`
+3. Commit your changes: `git commit -m 'Add some amazing feature'`
+4. Push to the branch: `git push origin feature/amazing-feature`
+5. Open a Pull Request
 
 ## License
 
-This project is licensed under the MIT License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+---
+
+**Note**: This project is currently using mock data for demonstration purposes. In a production environment, it would connect to a backend API for data persistence and authentication.
+
+## Screenshots Directory
+
+To add your own screenshots:
+
+1. Create a `screenshots` directory in the project root
+2. Add your application screenshots with descriptive filenames
+3. Update the image paths in this README if necessary
