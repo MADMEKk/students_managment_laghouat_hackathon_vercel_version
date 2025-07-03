@@ -1,0 +1,36 @@
+---
+description: best practice when coding
+globs: 
+alwaysApply: false
+---
+
+Start every response with a :)
+
+## Project Architecture
+
+- Follow my structure
+
+## code documentation
+- Add comprehensive inline comments explaining logic, purpose, and data flow
+- Include references to related files or components when functions interact with them
+- Explain complex calculations or business logic with step-by-step comments
+- Document any assumptions made during implementation
+- Comment any workarounds or non-standard approaches with justification
+
+## tools used across the project
+  "tailwindcss": "^4.0.0"
+  "react": "^19.0.0",
+  "zustand": "^5.0.3"
+
+## we are using this colors scheme :
+  background of all dark mode pages:dark:bg-gray-950; // as mentioned in the app.css file
+  background of alllight-mode pages bg-neutral-500
+  dark:text-gray-500  // for black mode text color
+  text-grey-500  // for light mode text color
+  #FF4D6D // for maybe buttons
+  /public/images // folder where i saved assets like images and logos
+
+  
+  
+
+
